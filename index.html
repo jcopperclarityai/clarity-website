@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clarity AI — Problem First. Technology Second.</title>
+  <meta name="description" content="Clarity AI builds purpose-built AI agents, EDI Intelligence assessments, and ERP implementation tools for operations teams who need results, not experiments." />
+  <meta name="keywords" content="AI automation, AI agents, EDI assessment, Acumatica implementation, JDE EDI, AP fraud detection, job cost variance, operational AI consulting" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Clarity AI — Problem First. Technology Second." />
+  <meta property="og:description" content="Clarity AI builds purpose-built AI agents, EDI Intelligence assessments, and ERP implementation tools for operations teams who need results, not experiments." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://clarityaicg.com" />
+  <link rel="canonical" href="https://clarityaicg.com" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Skip to content -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="wordmark" aria-label="clarityAI — Home">
+        <span class="wordmark-text"><span class="clarity">clarity</span><span class="ai-glyph">AI</span></span>
+        <span class="wordmark-eyebrow">Empowering Your Data</span>
+      </a>
+
+      <nav role="navigation" aria-label="Primary navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="solutions.html">Solutions</a></li>
+          <li><a href="edi-intelligence.html">EDI Intelligence</a></li>
+          <li><a href="tools.html">Tools</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="insights.html">Insights</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="contact.html" class="btn-primary nav-cta">Book a Discovery Call</a>
+
+      <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false" onclick="toggleNav(this)">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile nav -->
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+      <a href="index.html">Home</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="edi-intelligence.html">EDI Intelligence</a>
+      <a href="tools.html">Tools</a>
+      <a href="about.html">About</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="insights.html">Insights</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="btn-primary">Book a Discovery Call</a>
+    </nav>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main id="main">
+
+    <!-- 1. HERO -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <canvas id="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-inner">
+        <!-- Left Column -->
+        <div class="hero-left">
+          <span class="eyebrow">Empowering Your Data</span>
+          <h1 id="hero-heading" data-text="Most AI projects fail because the problem wasn't defined first.">Most AI projects fail because the problem wasn't defined first.</h1>
+          <p class="subtitle">Purpose-built AI agents, EDI Intelligence assessments, and ERP tooling — for operations teams who need results, not experiments.</p>
+          <div class="btn-group mt-32">
+            <a href="contact.html" class="btn-primary">Book a Discovery Call</a>
+            <a href="solutions.html" class="btn-secondary">See the Agents</a>
+          </div>
+        </div>
+
+        <!-- Right Column: Cockpit Console -->
+        <div class="cockpit" role="img" aria-label="Executive AI Cockpit — live operational metrics">
+
+          <!-- System status bar -->
+          <div class="cockpit-status-bar">
+            <span class="cockpit-status-dot"></span>
+            <span class="cockpit-status-text">SYSTEM ONLINE</span>
+            <span class="cockpit-timestamp" id="cockpit-time">--:--:--</span>
+          </div>
+
+          <div class="cockpit-header">Executive AI Cockpit — Live View</div>
+
+          <!-- Scanning line animation -->
+          <div class="cockpit-scan-line" aria-hidden="true"></div>
+
+          <!-- Metrics -->
+          <div class="cockpit-metric">
+            <div class="cockpit-metric-left">
+              <span class="cockpit-metric-indicator green"></span>
+              <span class="cockpit-metric-label">AP Exceptions Caught</span>
+            </div>
+            <div class="cockpit-metric-right">
+              <span class="cockpit-metric-value" id="cm-ap">247</span>
+              <span class="cockpit-metric-unit">/ week</span>
+            </div>
+          </div>
+          <div class="cockpit-bar-track"><div class="cockpit-bar-fill" style="width:82%"></div></div>
+
+          <div class="cockpit-metric">
+            <div class="cockpit-metric-left">
+              <span class="cockpit-metric-indicator green"></span>
+              <span class="cockpit-metric-label">EDI Document Rejects</span>
+            </div>
+            <div class="cockpit-metric-right">
+              <span class="cockpit-metric-value" id="cm-edi">↓ 68%</span>
+              <span class="cockpit-metric-unit">vs baseline</span>
+            </div>
+          </div>
+          <div class="cockpit-bar-track"><div class="cockpit-bar-fill" style="width:68%"></div></div>
+
+          <div class="cockpit-metric">
+            <div class="cockpit-metric-left">
+              <span class="cockpit-metric-indicator amber"></span>
+              <span class="cockpit-metric-label">Job Cost Variance Alerts</span>
+            </div>
+            <div class="cockpit-metric-right">
+              <span class="cockpit-metric-value amber" id="cm-jcv">12</span>
+              <span class="cockpit-metric-unit cockpit-metric-unit-amber">active</span>
+            </div>
+          </div>
+          <div class="cockpit-bar-track"><div class="cockpit-bar-fill amber" style="width:40%"></div></div>
+
+          <!-- Ticker -->
+          <div class="cockpit-ticker">
+            <span class="cockpit-ticker-label">▶ RECOVERED</span>
+            <span class="cockpit-ticker-value">$2.3M</span>
+            <span class="cockpit-ticker-sub">across 14 engagements</span>
+          </div>
+
+          <!-- HUD corner decorations -->
+          <span class="cockpit-corner tl" aria-hidden="true"></span>
+          <span class="cockpit-corner tr" aria-hidden="true"></span>
+          <span class="cockpit-corner bl" aria-hidden="true"></span>
+          <span class="cockpit-corner br" aria-hidden="true"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. HOW WE WORK -->
+    <section class="section-alt" aria-labelledby="how-heading">
+      <div class="container">
+        <span class="eyebrow fade-up">How We Work</span>
+        <h2 id="how-heading" class="fade-up">Problem First. Technology Second.</h2>
+        <p class="fade-up mt-16" style="color:#888888; max-width:720px;">Every engagement starts with diagnosis — not a demo. We identify the exact operational challenge, quantify its cost and ROI, then deploy the right agent or service to fix it.</p>
+        <div class="grid-4 mt-48">
+          <div class="process-card fade-up">
+            <span class="step-badge">01</span>
+            <h3>Diagnose</h3>
+            <p>We listen before we build. We map the specific operational challenge, not a category of problems. No AI is discussed until we know what's broken.</p>
+          </div>
+          <div class="process-card fade-up">
+            <span class="step-badge">02</span>
+            <h3>Quantify</h3>
+            <p>We put a dollar figure on the problem. If we can't measure it, we're not ready to solve it. Clarity comes before automation.</p>
+          </div>
+          <div class="process-card fade-up">
+            <span class="step-badge">03</span>
+            <h3>Deploy</h3>
+            <p>We match the right agent or service to the specific challenge. Purpose-built, not generalized. Deployed in weeks, not quarters.</p>
+          </div>
+          <div class="process-card fade-up">
+            <span class="step-badge">04</span>
+            <h3>Measure</h3>
+            <p>We define success metrics before we start. Every engagement is tied to a number. You know exactly what changed — and what it's worth.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. THE PROBLEM -->
+    <section class="section" aria-labelledby="problem-heading">
+      <div class="container">
+        <span class="eyebrow fade-up">The Problem</span>
+        <h2 id="problem-heading" class="fade-up">Operational teams are leaving millions on the table.</h2>
+        <div class="grid-3 mt-48">
+          <div class="stat-card fade-up">
+            <div class="stat-numeral">30–40%</div>
+            <p>of today's workflows are ready for automation — but are still being done by hand.</p>
+          </div>
+          <div class="stat-card fade-up">
+            <div class="stat-numeral amber">$2.3M+</div>
+            <p>lost annually to manual exception handling and process inefficiency.</p>
+          </div>
+          <div class="stat-card fade-up">
+            <div class="stat-numeral">15%</div>
+            <p>of processes are currently automated. The gap is enormous.</p>
+          </div>
+        </div>
+        <p class="pull-quote fade-up">"Most AI initiatives fail not because the technology is wrong — but because the problem was never clearly defined."</p>
+      </div>
+    </section>
+
+    <!-- 5. WHAT WE DO -->
+    <section class="section" aria-labelledby="what-heading">
+      <div class="container">
+        <span class="eyebrow fade-up">What We Do</span>
+        <h2 id="what-heading" class="fade-up">Multiple business lines. One mission.</h2>
+        <div class="grid-3 mt-48">
+          <div class="biz-card fade-up">
+            <span class="section-num">01</span>
+            <h3>AI Agents &amp; Automation</h3>
+            <p class="mt-12" style="font-size:14px;color:#888888;">Purpose-built agents for specific operational challenges. Not general-purpose tools. Each agent targets a single, clearly defined failure mode.</p>
+            <ul>
+              <li>AP Anomaly &amp; Fraud Detection</li>
+              <li>Predictive Demand Signal Engine</li>
+              <li>Job Cost Variance Agent</li>
+              <li>Smart Purchasing Advisor</li>
+              <li>Executive AI Cockpit</li>
+              <li>Scriptd</li>
+              <li>JDE Knowledge Export</li>
+            </ul>
+            <a href="solutions.html" class="accent-link mt-16">See all agents →</a>
+          </div>
+          <div class="biz-card fade-up">
+            <span class="section-num">02</span>
+            <h3>EDI Intelligence &amp; Assessment</h3>
+            <p class="mt-12" style="font-size:14px;color:#888888;">Structured 3-week assessments diagnosing root causes of EDI failures, trading partner gaps, and ERP misconfiguration — with a prioritized roadmap.</p>
+            <ul>
+              <li>~56 hours of consultant analysis</li>
+              <li>Trading partner gap identification</li>
+              <li>ERP misconfiguration review</li>
+              <li>Prioritized fix roadmap + future-state design</li>
+              <li>Assessment fees credited toward Managed Services</li>
+            </ul>
+            <a href="edi-intelligence.html" class="accent-link mt-16">Explore EDI Intelligence →</a>
+          </div>
+          <div class="biz-card fade-up">
+            <span class="section-num">03</span>
+            <h3>ERP Implementation Tools</h3>
+            <p class="mt-12" style="font-size:14px;color:#888888;">Self-contained scoping and SOW tools for ERP consultants and VARs. Start with the Acumatica Implementation Estimator — generate proposals in minutes, not days.</p>
+            <ul>
+              <li>Acumatica Implementation Estimator</li>
+              <li>Auto-generate SOW &amp; project Gantt</li>
+              <li>Module-level complexity configuration</li>
+              <li>Runs in any browser — no server needed</li>
+              <li>Built for VARs and implementation partners</li>
+            </ul>
+            <a href="tools.html" class="accent-link mt-16">See the tools →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. OUR AI AGENTS -->
+    <section class="section-alt" aria-labelledby="agents-heading">
+      <div class="container">
+        <span class="eyebrow fade-up">Our AI Agents</span>
+        <h2 id="agents-heading" class="fade-up">Purpose-built for specific operational challenges.</h2>
+        <div class="grid-5 mt-48" style="grid-template-columns: repeat(3,1fr);">
+          <div class="agent-card fade-up">
+            <h3>AP Anomaly &amp; Fraud Detection</h3>
+            <p class="problem">Duplicate invoices, vendor fraud, billing irregularities slipping past your AP team.</p>
+            <p class="outcome">Catches exceptions in milliseconds — before month-end close.</p>
+          </div>
+          <div class="agent-card fade-up">
+            <h3>Predictive Demand Signal Engine</h3>
+            <p class="problem">Reactive inventory decisions based on last month's data instead of forward-looking signals.</p>
+            <p class="outcome">Forward-looking procurement guidance that reduces overstock and stockouts.</p>
+          </div>
+          <div class="agent-card fade-up">
+            <h3>Job Cost Variance Agent</h3>
+            <p class="problem">Cost overruns in construction or manufacturing discovered too late to act.</p>
+            <p class="outcome">Real-time variance detection so project managers can course-correct — not explain.</p>
+          </div>
+          <div class="agent-card fade-up">
+            <h3>Smart Purchasing Advisor</h3>
+            <p class="problem">Reactive buying, price creep, missed discounts, and expedited freight eating margins.</p>
+            <p class="outcome">Eliminates reactive purchasing decisions before they hit your P&amp;L.</p>
+          </div>
+          <div class="agent-card fade-up">
+            <h3>Executive AI Cockpit</h3>
+            <p class="problem">Leadership flying blind — fragmented data, delayed reports, no single operational view.</p>
+            <p class="outcome">An operational command center built for executive decision-making.</p>
+          </div>
+        </div>
+        <div class="text-center mt-48">
+          <a href="solutions.html" class="btn-primary">See All Agents</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. EDI INTELLIGENCE BAND -->
+    <section class="edi-band" aria-labelledby="edi-heading">
+      <div class="edi-band-inner">
+        <div>
+          <span class="eyebrow fade-up">EDI Intelligence</span>
+          <h2 id="edi-heading" class="fade-up">Find every EDI failure before it costs you more.</h2>
+          <p class="fade-up mt-16" style="color:#888888; line-height:1.6; max-width:520px;">Our structured, consultant-led EDI Intelligence Assessment diagnoses the root cause of EDI failures, trading partner complexity, and ERP misconfiguration — then delivers a prioritized roadmap with costs and timelines.</p>
+          <a href="edi-intelligence.html" class="btn-primary mt-32" style="display:inline-block;">Start Your Assessment →</a>
+        </div>
+        <div>
+          <div class="edi-stat-tile fade-up">
+            <span class="edi-stat-label">Engagement Length</span>
+            <span class="edi-stat-value">3 Weeks</span>
+          </div>
+          <div class="edi-stat-tile fade-up">
+            <span class="edi-stat-label">Consultant Analysis</span>
+            <span class="edi-stat-value">~56 hrs</span>
+          </div>
+          <div class="edi-stat-tile fade-up">
+            <span class="edi-stat-label">Fees Credited Toward Managed Services</span>
+            <span class="edi-stat-value">100%</span>
+          </div>
+          <div class="edi-stat-tile fade-up">
+            <span class="edi-stat-label">Assessment Phases</span>
+            <span class="edi-stat-value">3 Phases</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. MARKET OPPORTUNITY -->
+    <section class="section" aria-labelledby="market-heading">
+      <div class="container">
+        <span class="eyebrow fade-up">Market Opportunity</span>
+        <h2 id="market-heading" class="fade-up">The automation gap is enormous — and growing.</h2>
+        <div class="market-stats mt-48">
+          <div class="market-stat fade-up">
+            <div class="stat-numeral">$10B+</div>
+            <p class="mt-12">Enterprise Automation Market (TAM)</p>
+          </div>
+          <div class="market-stat fade-up">
+            <div class="stat-numeral amber">30%+</div>
+            <p class="mt-12">Annual Compound Growth Rate</p>
+          </div>
+        </div>
+        <div class="market-cols">
+          <div class="fade-up">
+            <h4>Digital Transformation</h4>
+            <p>Enterprises are under pressure to automate — but most attempts fail without a clear problem statement first.</p>
+          </div>
+          <div class="fade-up">
+            <h4>Labor Scarcity</h4>
+            <p>Finding and retaining operational talent is harder than ever. Automation multiplies existing team output.</p>
+          </div>
+          <div class="fade-up">
+            <h4>Only 15% Automated</h4>
+            <p>Only 15% of operational processes are currently automated. The upside is enormous.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. WHY CLARITY AI -->
+    <section class="section-alt" aria-labelledby="why-heading">
+      <div class="container">
+        <span class="eyebrow fade-up">Why Clarity AI</span>
+        <h2 id="why-heading" class="fade-up">Built by operators. Designed for outcomes.</h2>
+        <div class="grid-2 mt-48">
+          <div class="card fade-up">
+            <span class="step-badge">01</span>
+            <h3>Problem First — Always.</h3>
+            <p class="mt-12" style="color:#888888;">We are the only AI company that requires you to define the problem before we discuss technology. No demo until we know what's broken. No proposal until we can quantify the cost and ROI.</p>
+          </div>
+          <div class="card fade-up">
+            <span class="step-badge">02</span>
+            <h3>Consultants, Not Just Technologists.</h3>
+            <p class="mt-12" style="color:#888888;">We have configured EDI systems, architected solutions, and built AI from the ground up. Our AI is built by people who know what the data means — not just how to model it.</p>
+          </div>
+          <div class="card fade-up">
+            <span class="step-badge">03</span>
+            <h3>Purpose-Built Agents.</h3>
+            <p class="mt-12" style="color:#888888;">Not a platform. Not a general-purpose tool. Each agent targets a single, clearly defined operational challenge. That focus is the reason they work where generic automation fails.</p>
+          </div>
+          <div class="card fade-up">
+            <span class="step-badge">04</span>
+            <h3>Outcomes You Can Measure.</h3>
+            <p class="mt-12" style="color:#888888;">Every engagement is tied to a number. If we can't tell you how success is measured before we start, we're not ready to start. Speed to value is weeks — not quarters.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. RESULTS -->
+    <section class="section" aria-labelledby="results-heading">
+      <div class="container">
+        <span class="eyebrow fade-up">Results</span>
+        <h2 id="results-heading" class="fade-up">What clarity before automation looks like.</h2>
+        <div class="result-tiles mt-48">
+          <div class="result-tile fade-up">
+            <div class="stat-numeral">≤4 Wks</div>
+            <p>Average deployment time</p>
+          </div>
+          <div class="result-tile fade-up">
+            <div class="stat-numeral">60–80%</div>
+            <p>Processing time reduction</p>
+          </div>
+          <div class="result-tile fade-up">
+            <div class="stat-numeral">250–380%</div>
+            <p>3-year ROI</p>
+          </div>
+          <div class="result-tile fade-up">
+            <div class="stat-numeral">95%</div>
+            <p>Exception reduction</p>
+          </div>
+        </div>
+        <div class="industry-cards mt-48">
+          <div class="industry-card fade-up">
+            <span class="eyebrow" style="margin-bottom:8px;">Financial Services</span>
+            <h3>AP team eliminated manual review of 85% of invoices.</h3>
+            <p>The AP Anomaly Agent flagged duplicate invoices and billing irregularities before month-end close — catching errors the team had been missing for years.</p>
+          </div>
+          <div class="industry-card fade-up">
+            <span class="eyebrow" style="margin-bottom:8px;">Manufacturing</span>
+            <h3>Job cost overruns detected 3 weeks earlier.</h3>
+            <p>The Job Cost Variance Agent surfaced cost deviations in real time, giving project managers the window they needed to act — not explain.</p>
+          </div>
+          <div class="industry-card fade-up">
+            <span class="eyebrow" style="margin-bottom:8px;">Distribution</span>
+            <h3>EDI chargebacks reduced 70% in first 60 days.</h3>
+            <p>A 3-week EDI Intelligence Assessment identified misconfigured trading partner setups causing recurring document rejects. The future-state roadmap was executed in 6 weeks.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. NEXT STEPS -->
+    <section class="section-alt" aria-labelledby="nextsteps-heading">
+      <div class="container">
+        <span class="eyebrow fade-up">Next Steps</span>
+        <h2 id="nextsteps-heading" class="fade-up">Let's define the problem together.</h2>
+        <div class="next-steps-grid mt-48">
+          <div class="next-step-card fade-up">
+            <span class="step-badge amber">STEP 01</span>
+            <h3>Discovery Call</h3>
+            <p>30 minutes. No pitch. No demo. We listen to your operational challenges, identify where the real cost is, and tell you honestly whether we can help.</p>
+            <a href="contact.html" class="btn-primary">Book a Call →</a>
+          </div>
+          <div class="next-step-card fade-up">
+            <span class="step-badge amber">STEP 02</span>
+            <h3>EDI Assessment</h3>
+            <p>3 weeks / ~56 hours. If EDI failures are costing you chargebacks and trading partner trust, we'll diagnose every root cause and deliver a prioritized fix roadmap.</p>
+            <a href="edi-intelligence.html" class="btn-primary">Start Your Assessment →</a>
+          </div>
+          <div class="next-step-card fade-up">
+            <span class="step-badge amber">STEP 03</span>
+            <h3>Agent Pilot</h3>
+            <p>Deployed in ≤4 weeks. If you have a specific operational challenge — AP exceptions, cost overruns, reactive purchasing — we'll scope and deploy the right agent against it.</p>
+            <a href="contact.html" class="btn-primary">Tell Us the Problem →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. CLOSING CTA -->
+    <section class="cta-band" aria-labelledby="cta-heading">
+      <div class="container">
+        <h2 id="cta-heading">Clarity before automation.</h2>
+        <p class="subtitle">clarityaicg.com &nbsp;•&nbsp; Orlando, Florida</p>
+        <a href="contact.html" class="btn-primary mt-32" style="display:inline-block;">Book a Discovery Call</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-grid">
+      <!-- Col 1 -->
+      <div class="footer-col">
+        <a href="index.html" class="wordmark" style="text-decoration:none; display:inline-flex; flex-direction:column; margin-bottom:12px;">
+          <span class="wordmark-text"><span class="clarity">clarity</span><span class="ai-glyph">AI</span></span>
+        </a>
+        <p class="tagline">Problem First. Technology Second.</p>
+        <p class="location">Orlando, Florida</p>
+        <p>Clarity AI builds AI agents and assessment services for operations teams who need results, not experiments.</p>
+      </div>
+
+      <!-- Col 2 -->
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul class="footer-links">
+          <li><a href="solutions.html">AI Agents</a></li>
+          <li><a href="edi-intelligence.html">EDI Intelligence</a></li>
+          <li><a href="tools.html">ERP Tools</a></li>
+        </ul>
+        <h4 style="margin-top:28px;">Company</h4>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="insights.html">Insights</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <h4 style="margin-top:28px;">Resources</h4>
+        <ul class="footer-links">
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="contact.html">Book a Call</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3 -->
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact">
+          <a href="mailto:info@clarityaicg.com">info@clarityaicg.com</a>
+          <a href="tel:+14079709282">(407) 970-9282</a>
+          <a href="https://linkedin.com/company/clarityaicg" target="_blank" rel="noopener noreferrer" aria-label="Clarity AI on LinkedIn">LinkedIn ↗</a>
+        </div>
+        <p class="newsletter-label" style="margin-top:24px;">Field notes from our assessments. Once a month. No fluff.</p>
+        <form class="newsletter-form" onsubmit="return false;" aria-label="Newsletter signup">
+          <label for="newsletter-email" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;">Email address</label>
+          <input type="email" id="newsletter-email" placeholder="Your email address" autocomplete="email" />
+          <button type="submit" class="btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      clarityAI &nbsp;|&nbsp; © 2026 Clarity AI Consulting Group &nbsp;|&nbsp; clarityaicg.com &nbsp;|&nbsp; Confidential information — do not reproduce without written permission.
+    </div>
+  </footer>
+
+  <script>
+    /* ── Mobile nav ─────────────────────────────── */
+    function toggleNav(btn) {
+      const nav = document.getElementById('mobile-nav');
+      const open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+    }
+
+    /* ── Scroll fade-up ──────────────────────────── */
+    const fadeEls = document.querySelectorAll('.fade-up');
+    if ('IntersectionObserver' in window) {
+      const fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            fadeObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      fadeEls.forEach(el => fadeObserver.observe(el));
+    } else {
+      fadeEls.forEach(el => el.classList.add('visible'));
+    }
+
+    /* ── Cockpit live clock ──────────────────────── */
+    (function () {
+      const el = document.getElementById('cockpit-time');
+      if (!el) return;
+      function tick() {
+        const now = new Date();
+        const pad = n => String(n).padStart(2, '0');
+        el.textContent = pad(now.getHours()) + ':' + pad(now.getMinutes()) + ':' + pad(now.getSeconds());
+      }
+      tick();
+      setInterval(tick, 1000);
+    })();
+
+    /* ── Hero particle canvas ────────────────────── */
+    (function () {
+      const canvas = document.getElementById('hero-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let W, H, particles;
+      const COUNT = 100;
+      const GREEN  = 'rgba(79,182,71,';
+      const BLUE   = 'rgba(170,221,255,';
+
+      function resize() {
+        const hero = canvas.parentElement;
+        W = canvas.width  = hero.offsetWidth;
+        H = canvas.height = hero.offsetHeight;
+      }
+
+      function mkParticle() {
+        const isGreen = Math.random() > 0.5;
+        return {
+          x: Math.random() * W,
+          y: Math.random() * H,
+          r: Math.random() * 1.8 + 0.6,
+          vx: (Math.random() - 0.5) * 0.35,
+          vy: (Math.random() - 0.5) * 0.35,
+          alpha: Math.random() * 0.55 + 0.25,
+          color: isGreen ? GREEN : BLUE,
+        };
+      }
+
+      function init() {
+        resize();
+        particles = Array.from({ length: COUNT }, mkParticle);
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, W, H);
+        particles.forEach(p => {
+          p.x += p.vx;
+          p.y += p.vy;
+          if (p.x < 0) p.x = W;
+          if (p.x > W) p.x = 0;
+          if (p.y < 0) p.y = H;
+          if (p.y > H) p.y = 0;
+
+          // draw connecting lines
+          particles.forEach(q => {
+            const dx = p.x - q.x, dy = p.y - q.y;
+            const dist = Math.sqrt(dx*dx + dy*dy);
+            if (dist < 140) {
+              ctx.beginPath();
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(q.x, q.y);
+              ctx.strokeStyle = p.color + (0.18 * (1 - dist/140)) + ')';
+              ctx.lineWidth = 0.8;
+              ctx.stroke();
+            }
+          });
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = p.color + p.alpha + ')';
+          ctx.fill();
+        });
+        requestAnimationFrame(draw);
+      }
+
+      init();
+      draw();
+      window.addEventListener('resize', () => { resize(); });
+    })();
+
+    /* ── Hero h1 glitch burst ────────────────────── */
+    (function () {
+      const h1 = document.getElementById('hero-heading');
+      if (!h1) return;
+      function glitch() {
+        h1.classList.add('glitch-active');
+        setTimeout(() => h1.classList.remove('glitch-active'), 420);
+        setTimeout(glitch, 5000 + Math.random() * 7000);
+      }
+      setTimeout(glitch, 2500);
+    })();
+
+    /* ── Animated stat counters ──────────────────── */
+    (function () {
+      const targets = [
+        { el: null, end: 40, suffix: '%', prefix: '30–' },
+        { el: null, end: 2.3, suffix: 'M+', prefix: '$', decimals: 1 },
+        { el: null, end: 15, suffix: '%' },
+      ];
+      const numerals = document.querySelectorAll('.stat-numeral');
+      numerals.forEach((el, i) => { if (targets[i]) targets[i].el = el; });
+
+      function animateCount(cfg) {
+        if (!cfg.el) return;
+        const dur = 1800;
+        const start = performance.now();
+        const startVal = 0;
+        function step(now) {
+          const t = Math.min((now - start) / dur, 1);
+          const ease = 1 - Math.pow(1 - t, 3);
+          const val = startVal + (cfg.end - startVal) * ease;
+          const fmt = cfg.decimals ? val.toFixed(cfg.decimals) : Math.round(val);
+          cfg.el.textContent = (cfg.prefix || '') + fmt + (cfg.suffix || '');
+          if (t < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+
+      if ('IntersectionObserver' in window) {
+        const obs = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const idx = [...document.querySelectorAll('.stat-numeral')].indexOf(entry.target);
+              if (targets[idx]) animateCount(targets[idx]);
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.5 });
+        document.querySelectorAll('.stat-numeral').forEach(el => obs.observe(el));
+      }
+    })();
+  </script>
+</body>
+</html>
