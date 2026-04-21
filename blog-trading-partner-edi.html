@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Trading Partner Isn't the Problem. Your Setup Is. | Clarity AI Blog</title>
+  <meta name="description" content="When document rejects pile up, the first call goes to the trading partner. It usually shouldn't. Five ERP-side misconfigurations account for the majority of EDI failures." />
+  <meta name="keywords" content="EDI failures, EDI misconfiguration, trading partner rejects, ERP EDI setup, ISA qualifiers, 997 acknowledgment, EDI troubleshooting, JDE EDI, EDI integration" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Your Trading Partner Isn't the Problem. Your Setup Is. | Clarity AI" />
+  <meta property="og:description" content="When document rejects pile up, the first call goes to the trading partner. It usually shouldn't. Here are the five ERP-side misconfigurations behind most EDI failures." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://clarityaicg.com/blog-trading-partner-edi" />
+  <link rel="canonical" href="https://clarityaicg.com/blog-trading-partner-edi" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- HEADER -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="wordmark" aria-label="clarityAI — Home">
+        <span class="wordmark-text"><span class="clarity">clarity</span><span class="ai-glyph">AI</span></span>
+        <span class="wordmark-eyebrow">Problem First. Technology Second.</span>
+      </a>
+      <nav role="navigation" aria-label="Primary navigation">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="solutions.html">Solutions</a></li>
+          <li><a href="edi-intelligence.html">EDI Intelligence</a></li>
+          <li><a href="tools.html">Tools</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="blog.html" aria-current="page">Blog</a></li>
+          <li><a href="insights.html">Insights</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="contact.html" class="btn-primary nav-cta">Book a Discovery Call</a>
+      <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false" onclick="toggleNav(this)">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+      <a href="index.html">Home</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="edi-intelligence.html">EDI Intelligence</a>
+      <a href="tools.html">Tools</a>
+      <a href="about.html">About</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="blog.html">Blog</a>
+      <a href="insights.html">Insights</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="btn-primary">Book a Discovery Call</a>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main id="main">
+
+    <!-- Post Hero -->
+    <section class="post-hero" aria-labelledby="post-heading">
+      <div class="container">
+        <p class="post-breadcrumb"><a href="blog.html">← Blog</a> &nbsp;/&nbsp; EDI Intelligence</p>
+        <span class="post-meta">
+          <span class="post-category">EDI Intelligence</span>
+          <span class="post-date">April 21, 2026</span>
+          <span class="post-read-time">6 min read</span>
+        </span>
+        <h1 id="post-heading">Your trading partner isn't the problem. Your setup is.</h1>
+        <p class="post-deck">When document rejects pile up, the first call goes to the trading partner. It usually shouldn't.</p>
+      </div>
+    </section>
+
+    <!-- Post Body -->
+    <article>
+      <div class="post-body">
+
+        <p class="post-intro">Something breaks in EDI and the first call goes to the trading partner. That is the pattern across dozens of environments. And in most cases, it is the wrong call.</p>
+
+        <p>The partner is external. They are easy to point to. And when a 997 functional acknowledgment comes back with an error, it feels like proof. But the partner is responding correctly — to a document that was wrong before it left your system.</p>
+
+        <p>Five ERP-side misconfigurations account for the majority of EDI failures we see. None of them are the trading partner's fault.</p>
+
+        <hr />
+
+        <h2>Why the instinct gets it wrong</h2>
+
+        <p>Trading partner blame is a reflex. It is reinforced by the fact that EDI errors surface at the interchange level — in the partner's acknowledgment, in their rejection notice, in their chargeback. The error message references their requirements. So they must be the problem.</p>
+
+        <p>They are not. They are telling you what they expected and what they received. Those two things did not match. The mismatch almost always originates on your side: in your ERP configuration, your translation layer, or your partner setup record.</p>
+
+        <p>Before you pick up the phone, read the error code. Then trace it back to your own configuration. In most cases, you will find the answer before the call connects.</p>
+
+        <hr />
+
+        <h2>The five misconfigurations behind most failures</h2>
+
+        <p>These are not edge cases. They appear repeatedly across industries, ERP platforms, and trading partner networks.</p>
+
+        <h3 style="font-size:20px; margin: 32px 0 12px; color: var(--white);">1. Wrong ISA/GS qualifiers</h3>
+
+        <p>Your interchange envelope carries two identifiers: yours and your partner's. If either one does not match what the partner has on file in their VAN or EDI platform, the document is rejected at the envelope level — before the content is ever read.</p>
+
+        <p>This happens most often after an ERP migration or a trading partner onboarding where qualifiers were copied from a test document instead of confirmed directly. Check the ISA06 and ISA08 values in your outbound files against the partner's production setup record. They must match exactly — including leading zeros, qualifier codes, and spacing.</p>
+
+        <h3 style="font-size:20px; margin: 32px 0 12px; color: var(--white);">2. Test mode never flipped to production</h3>
+
+        <p>ISA15 is a single character. T for test. P for production. If your environment went live with ISA15 set to T, every document you have sent is being treated as a test by your trading partners. Some partners reject them outright. Others silently discard them.</p>
+
+        <p>This flag is often set during integration testing and never verified at go-live. Check it now. It is not uncommon to find production environments sending test-flagged documents months after launch — with no visible error in the ERP, and no one on the operations side aware it is happening.</p>
+
+        <h3 style="font-size:20px; margin: 32px 0 12px; color: var(--white);">3. Stale segment maps</h3>
+
+        <p>EDI maps are point-in-time documents. They describe the structure of a transaction set as it was when the map was built. Trading partners update their specifications. Retailers release new requirements guides. 850 formats change. If your map was not updated to match, the documents you are sending are structurally incorrect — even if every data field is populated correctly.</p>
+
+        <p>The most common version mismatches involve mandatory segment requirements added by the partner, deprecated loop structures they no longer accept, and new qualifiers for existing data elements. Pull the current trading partner specification and compare it against your active map. Version drift of more than 12 months is a red flag.</p>
+
+        <h3 style="font-size:20px; margin: 32px 0 12px; color: var(--white);">4. Code table mismatches</h3>
+
+        <p>Unit of measure codes. Payment term codes. Ship method codes. Allowance and charge codes. Each one is a lookup — a value in your ERP that gets translated into an EDI code before transmission. If the translation table is wrong, the partner receives a code they do not recognize.</p>
+
+        <p>This breaks quietly. The document structure is valid. The map passes. But the receiving system rejects the line item because EA is not in their accepted UOM list, or the payment term code does not map to anything in their system. These rejections often come back as vague compliance errors. The fix is a code table audit against each partner's accepted value list.</p>
+
+        <h3 style="font-size:20px; margin: 32px 0 12px; color: var(--white);">5. Functional acknowledgment (997/999) handling not configured</h3>
+
+        <p>A 997 or 999 is the partner's receipt. It tells you whether they accepted or rejected the transaction set you sent. If your system is not processing these acknowledgments — if they arrive and sit unread — you have no visibility into failure. Documents you believe were delivered may have been rejected hours ago.</p>
+
+        <p>In JDE and several other ERP environments, acknowledgment processing requires explicit configuration: a receive-capable trading partner record, an inbound map for the 997, and an alert or workflow to surface rejections. Many implementations skip this step. The result is a blind spot at exactly the point where visibility matters most.</p>
+
+        <div class="post-callout">
+          <p><strong>Five failure modes. One pattern.</strong> ISA/GS qualifier mismatch. Test flag in production. Stale segment maps. Code table gaps. Unprocessed acknowledgments. Each one is a configuration decision — made once and never revisited.</p>
+        </div>
+
+        <hr />
+
+        <h2>How to actually diagnose a reject</h2>
+
+        <p>Start with the reject notice, not the phone. Read the error segment — usually an AK2, AK3, or AK4 loop in the 997. The AK4-03 data element error code tells you exactly what the partner's system rejected and why.</p>
+
+        <p>Map that code back to the outbound document. Find the segment and data element it references. Then trace that element back to your translation layer: what value was sent, where it came from in the ERP, and whether the code table entry is current.</p>
+
+        <p>In most cases, the fix is in the ERP configuration or the map — not in a conversation with the trading partner. The partner gave you everything you need in the acknowledgment. You just have to read it.</p>
+
+        <hr />
+
+        <h2>What a clean environment looks like</h2>
+
+        <p>A well-configured EDI environment has documented partner profiles with confirmed production qualifiers. Maps are versioned and reviewed against current specifications at least annually. The ISA15 flag is verified at every go-live and every partner activation. Code tables are audited when partner requirements change. And 997/999 acknowledgments are processed automatically, with alerts surfaced to the operations team when rejections occur.</p>
+
+        <p>None of this is complex. It is configuration discipline. Most environments that accumulate EDI failures are not poorly designed — they are under-maintained. The five misconfigurations above are not bugs. They are the natural result of configurations set once and never revisited.</p>
+
+        <p>If your team is spending time on trading partner calls that resolve with "we didn't change anything on our end," the problem is in your environment. It always has been.</p>
+
+        <!-- Post CTA -->
+        <div class="post-cta">
+          <h3>We find every configuration failure in your environment.</h3>
+          <p>Clarity AI's EDI Intelligence Assessment covers your full trading partner network. Three weeks. A prioritized roadmap. A complete picture of what is broken and exactly what to fix. Assessment fees credit toward EDI Managed Services if you move forward.</p>
+          <a href="edi-intelligence.html" class="btn-primary">See the EDI Assessment →</a>
+        </div>
+
+      </div>
+    </article>
+
+    <!-- Related posts -->
+    <section class="section-alt" aria-labelledby="related-heading">
+      <div class="container">
+        <span class="eyebrow fade-up">Keep Reading</span>
+        <h2 id="related-heading" class="fade-up">More from the assessment floor.</h2>
+
+        <div class="blog-grid mt-48">
+
+          <article class="blog-card fade-up">
+            <div class="blog-img-placeholder" role="img" aria-label="AI Strategy">AI &amp; Strategy</div>
+            <div class="blog-card-body">
+              <span class="eyebrow" style="margin-bottom:6px;">AI Strategy</span>
+              <h3>The real reason your AI initiative will fail.</h3>
+              <p>Most AI projects don't fail because of the technology. They fail because the problem was never defined. Here's what that costs — and what to do instead.</p>
+              <div class="blog-meta">
+                <span class="date">April 2026</span>
+                <span class="author">Clarity AI</span>
+              </div>
+              <a href="blog-ai-implementation-failures.html" class="accent-link mt-16">Read →</a>
+            </div>
+          </article>
+
+          <article class="blog-card fade-up">
+            <div class="blog-img-placeholder" role="img" aria-label="AP &amp; Finance Operations">AP &amp; Finance Operations</div>
+            <div class="blog-card-body">
+              <span class="eyebrow" style="margin-bottom:6px;">AP Automation</span>
+              <h3>Why 85% of AP exceptions never need a human.</h3>
+              <p>Most AP exceptions follow detectable patterns. Humans shouldn't be the first line of review.</p>
+              <div class="blog-meta">
+                <span class="date">January 2026</span>
+                <span class="author">Clarity AI</span>
+              </div>
+              <a href="contact.html" class="accent-link mt-16">Coming Soon →</a>
+            </div>
+          </article>
+
+          <article class="blog-card fade-up">
+            <div class="blog-img-placeholder" role="img" aria-label="ERP Implementation">ERP Implementation</div>
+            <div class="blog-card-body">
+              <span class="eyebrow" style="margin-bottom:6px;">ERP &amp; VARs</span>
+              <h3>How scope creep starts — and where VARs lose the most margin.</h3>
+              <p>It rarely starts with a big change order. It starts with one undocumented assumption in week one.</p>
+              <div class="blog-meta">
+                <span class="date">December 2025</span>
+                <span class="author">Clarity AI</span>
+              </div>
+              <a href="contact.html" class="accent-link mt-16">Coming Soon →</a>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="text-center mt-48">
+          <a href="blog.html" class="btn-secondary">View All Posts →</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="wordmark" style="text-decoration:none; display:inline-flex; flex-direction:column; margin-bottom:12px;">
+          <span class="wordmark-text"><span class="clarity">clarity</span><span class="ai-glyph">AI</span></span>
+        </a>
+        <p class="tagline">Problem First. Technology Second.</p>
+        <p class="location">Orlando, Florida</p>
+        <p>Clarity AI builds AI agents and assessment services for operations teams who need results, not experiments.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul class="footer-links">
+          <li><a href="solutions.html">AI Agents</a></li>
+          <li><a href="edi-intelligence.html">EDI Intelligence</a></li>
+          <li><a href="tools.html">ERP Tools</a></li>
+        </ul>
+        <h4 style="margin-top:28px;">Company</h4>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="insights.html">Insights</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <h4 style="margin-top:28px;">Resources</h4>
+        <ul class="footer-links">
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="contact.html">Book a Call</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact">
+          <a href="mailto:info@clarityaicg.com">info@clarityaicg.com</a>
+          <a href="tel:+14079709282">(407) 970-9282</a>
+          <a href="https://linkedin.com/company/clarityaicg" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        </div>
+        <p class="newsletter-label" style="margin-top:24px;">New posts. Once a month. No fluff.</p>
+        <form class="newsletter-form" onsubmit="return false;" aria-label="Newsletter signup">
+          <label for="nl-email-post" style="position:absolute;width:1px;height:1px;overflow:hidden;">Email</label>
+          <input type="email" id="nl-email-post" placeholder="Your email address" autocomplete="email" />
+          <button type="submit" class="btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      clarityAI &nbsp;|&nbsp; © 2026 Clarity AI Consulting Group &nbsp;|&nbsp; clarityaicg.com &nbsp;|&nbsp; Confidential information — do not reproduce without written permission.
+    </div>
+  </footer>
+
+  <script>
+    function toggleNav(btn) {
+      const nav = document.getElementById('mobile-nav');
+      const open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+    }
+    const fadeEls = document.querySelectorAll('.fade-up');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+      }, { threshold: 0.1 });
+      fadeEls.forEach(el => observer.observe(el));
+    } else { fadeEls.forEach(el => el.classList.add('visible')); }
+  </script>
+</body>
+</html>
