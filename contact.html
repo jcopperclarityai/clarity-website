@@ -8,21 +8,11 @@
   <link rel="canonical" href="https://clarityaicg.com/contact" />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .calendly-placeholder {
-      background-color: #20295A;
-      border: 1px solid #2A3A5C;
+    .zoho-booking-embed {
       border-radius: 8px;
-      height: 360px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 32px;
-      color: #888888;
+      overflow: hidden;
+      border: 1px solid #2A3A5C;
     }
-    .calendly-placeholder .cal-icon { font-size: 40px; margin-bottom: 16px; }
-    .calendly-placeholder p { font-size: 14px; line-height: 1.6; }
     .form-submit-note {
       font-size: 13px;
       color: #888888;
@@ -164,12 +154,17 @@
               </div>
             </div>
 
-            <!-- Calendar embed placeholder -->
-            <div class="calendly-placeholder">
-              <div class="cal-icon" aria-hidden="true">📅</div>
-              <p style="color:#AADDFF; font-size:15px; font-weight:700; margin-bottom:8px;">Schedule Directly</p>
-              <p>Calendar booking (Calendly or equivalent) will embed here. Choose a 30-minute Discovery Call slot that works for your schedule.</p>
-              <a href="mailto:info@clarityaicg.com?subject=Discovery Call Request" class="btn-secondary mt-24" style="font-size:13px; padding:10px 20px;">Email to Schedule</a>
+            <!-- Zoho Bookings embed -->
+            <div class="zoho-booking-embed">
+              <iframe
+                src="https://clarityai.zohobookings.com/#/4743680000000041049"
+                width="100%"
+                height="480"
+                frameborder="0"
+                title="Book a Discovery Call"
+                allow="payment"
+                style="display:block; border:none;"
+              ></iframe>
             </div>
 
             <!-- What to expect -->
