@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why Your AP Team Is the Last to Know About Invoice Fraud | Clarity AI Blog</title>
+  <meta name="description" content="By the time a duplicate invoice surfaces in your monthly AP review, the payment is already out the door. Here is what continuous detection catches — and when." />
+  <meta name="keywords" content="AP fraud detection, invoice fraud, duplicate invoices, accounts payable anomaly detection, AP automation, vendor fraud, invoice anomaly agent" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Why Your AP Team Is the Last to Know About Invoice Fraud | Clarity AI" />
+  <meta property="og:description" content="By the time a duplicate invoice surfaces in your monthly review, the payment is already out the door." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://clarityaicg.com/blog-ap-fraud-detection" />
+  <link rel="canonical" href="https://clarityaicg.com/blog-ap-fraud-detection" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- HEADER -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="wordmark" aria-label="clarityAI — Home">
+        <span class="wordmark-text"><span class="clarity">clarity</span><span class="ai-glyph">AI</span></span>
+        <span class="wordmark-eyebrow">Empowering Your Data</span>
+      </a>
+      <nav role="navigation" aria-label="Primary navigation">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="solutions.html">Solutions</a></li>
+          <li><a href="edi-intelligence.html">EDI Intelligence</a></li>
+          <li><a href="tools.html">Tools</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="blog.html" aria-current="page">Blog</a></li>
+          <li><a href="insights.html">Insights</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="contact.html" class="btn-primary nav-cta">Book a Discovery Call</a>
+      <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false" onclick="toggleNav(this)">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+      <a href="index.html">Home</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="edi-intelligence.html">EDI Intelligence</a>
+      <a href="tools.html">Tools</a>
+      <a href="about.html">About</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="blog.html">Blog</a>
+      <a href="insights.html">Insights</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="btn-primary">Book a Discovery Call</a>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main id="main">
+
+    <!-- Post Hero -->
+    <section class="post-hero" aria-labelledby="post-heading">
+      <div class="container">
+        <p class="post-breadcrumb"><a href="blog.html">← Blog</a> &nbsp;/&nbsp; AP Automation</p>
+        <span class="post-meta">
+          <span class="post-category">AP Automation</span>
+          <span class="post-date">May 2026</span>
+          <span class="post-read-time">5 min read</span>
+        </span>
+        <h1 id="post-heading">Why your AP team is the last to know about invoice fraud.</h1>
+        <p class="post-deck">By the time a duplicate invoice surfaces in your monthly review, the payment is already out the door.</p>
+      </div>
+    </section>
+
+    <!-- Post Body -->
+    <article>
+      <div class="post-body">
+
+        <p class="post-intro">Most AP teams run a similar process. Invoices come in. Someone reviews them. Exception reports get pulled weekly or monthly. Anything that looks off gets flagged for follow-up.</p>
+
+        <p>It sounds like a system. It isn't.</p>
+
+        <p>The gap between when fraud occurs and when a human catches it is measured in payment cycles. A duplicate invoice submitted on a Tuesday gets reviewed in the Friday batch. It gets approved Wednesday of the following week. The payment goes out Thursday.</p>
+
+        <p>By the time someone pulls the exception report, the money is gone. And the vendor who submitted the duplicate is already on the next one.</p>
+
+        <hr />
+
+        <h2>What AP teams are actually looking for</h2>
+
+        <p>Ask an AP manager what they watch for and you'll hear the right answers: duplicate invoice numbers, vendor name variations, payments to unfamiliar bank accounts, invoices with no PO match.</p>
+
+        <p>They know the failure modes. The problem is the process designed to catch them is manual and periodic. A human can review 40 invoices a session. They cannot hold 6,000 vendor records in their head at once.</p>
+
+        <div class="post-callout">
+          <p>Duplicate invoices don't fail review because AP doesn't know what to look for. They fail review because the volume is too high and the window for catching them is too narrow.</p>
+        </div>
+
+        <hr />
+
+        <h2>What continuous detection looks like</h2>
+
+        <p>An AP Anomaly Detection agent doesn't replace your AP team. It runs ahead of them.</p>
+
+        <p>Every invoice gets assessed before it reaches a human. The agent checks for duplicate invoice numbers, amounts, and vendor identifiers across the full historical dataset — not just the last 90 days. It flags vendor record changes: new banking details, address shifts, contact changes that don't match the setup in your ERP. It catches invoices submitted against closed POs, invoices from vendors not in your approved list, and billing patterns that don't match the contract terms.</p>
+
+        <p>When something breaks a rule, it flags it. The AP team reviews flags, not invoices.</p>
+
+        <p>That's the difference. Reviews shift from volume-based to exception-based. The agent handles the routine. Your team handles the judgment calls.</p>
+
+        <hr />
+
+        <h2>What it catches in the first 30 days</h2>
+
+        <p>The first month of detection usually surfaces three categories.</p>
+
+        <p><strong>Duplicate invoices that slipped through.</strong> In most environments we assess, between 0.5% and 2% of invoices have a duplicate analog in the system — either paid, pending, or previously voided. At scale, that's real money.</p>
+
+        <p><strong>Vendor master anomalies.</strong> Bank account changes submitted without a matching change request. Vendor names with subtle variations — "ABC Supply" versus "ABC Supply Co." — that share the same address and routing number.</p>
+
+        <p><strong>Pattern deviations.</strong> A vendor that invoices monthly suddenly submits three invoices in a single week. A billing amount running 40% above the contract ceiling. These don't always signal fraud. But they always signal something worth reviewing.</p>
+
+        <div class="post-callout">
+          <p>The first 30 days aren't an audit. They're a diagnostic. What gets surfaced tells you how much exposure existed before detection was in place.</p>
+        </div>
+
+        <!-- Data callout table -->
+        <table class="post-data-table" aria-label="AP anomaly detection benchmarks">
+          <thead>
+            <tr>
+              <th scope="col">Metric</th>
+              <th scope="col">Benchmark</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Typical duplicate invoice rate</td>
+              <td>0.5% – 2% of total invoice volume</td>
+            </tr>
+            <tr>
+              <td>Detection window — manual review</td>
+              <td>7 – 14 days post-payment</td>
+            </tr>
+            <tr>
+              <td>Detection window — agent</td>
+              <td>Before invoice approval</td>
+            </tr>
+            <tr>
+              <td>Most common failure mode</td>
+              <td>Vendor name variation + shared routing number</td>
+            </tr>
+            <tr>
+              <td>Avg. first-30-day findings per 1,000 invoices</td>
+              <td>3 – 12 flagged anomalies</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <hr />
+
+        <h2>The right time to look is before the payment runs</h2>
+
+        <p>Manual AP review is not a safety net. It is a delay mechanism. The invoices move faster than the process designed to catch them.</p>
+
+        <p>If your team is reviewing invoices after approval rather than before payment, you're already working backward. Detection needs to happen at the point of entry — before the invoice is approved, before the payment runs, before the exception report that comes two weeks later.</p>
+
+        <p>That's what continuous AP anomaly detection gives you. Not a replacement for your team. A first pass that happens faster than any manual process can.</p>
+
+        <p><strong>If you want to see what 30 days of detection surfaces in your environment, that's where we start. Define the problem. Measure the exposure. Then deploy the agent.</strong></p>
+
+        <!-- Post CTA -->
+        <div class="post-cta">
+          <h3>What is your AP environment actually missing?</h3>
+          <p>We start with a diagnostic — not a demo. Three weeks inside your systems, a clear picture of where the exposure is, and a prioritized plan for what to fix first.</p>
+          <a href="contact.html" class="btn-primary">Book a Discovery Call →</a>
+        </div>
+
+      </div>
+    </article>
+
+    <!-- Related posts -->
+    <section class="section-alt" aria-labelledby="related-heading">
+      <div class="container">
+        <span class="eyebrow fade-up">Keep Reading</span>
+        <h2 id="related-heading" class="fade-up">More from the assessment floor.</h2>
+
+        <div class="blog-grid mt-48">
+
+          <article class="blog-card fade-up">
+            <div class="blog-img-placeholder" role="img" aria-label="EDI &amp; Integration">EDI &amp; Integration</div>
+            <div class="blog-card-body">
+              <span class="eyebrow" style="margin-bottom:6px;">EDI Intelligence</span>
+              <h3>Your trading partner isn't the problem. Your setup is.</h3>
+              <p>When document rejects pile up, the first call goes to the trading partner. It usually shouldn't. Five ERP-side misconfigurations account for most EDI failures.</p>
+              <div class="blog-meta">
+                <span class="date">April 2026</span>
+                <span class="author">Clarity AI</span>
+              </div>
+              <a href="blog-trading-partner-edi.html" class="accent-link mt-16">Read →</a>
+            </div>
+          </article>
+
+          <article class="blog-card fade-up">
+            <div class="blog-img-placeholder" role="img" aria-label="AI Strategy">AI &amp; Strategy</div>
+            <div class="blog-card-body">
+              <span class="eyebrow" style="margin-bottom:6px;">AI Strategy</span>
+              <h3>The real reason your AI initiative will fail.</h3>
+              <p>Most AI projects don't fail because of the technology. They fail because the problem was never defined. Here's what that costs — and what to do instead.</p>
+              <div class="blog-meta">
+                <span class="date">April 2026</span>
+                <span class="author">Clarity AI</span>
+              </div>
+              <a href="blog-ai-implementation-failures.html" class="accent-link mt-16">Read →</a>
+            </div>
+          </article>
+
+          <article class="blog-card fade-up">
+            <div class="blog-img-placeholder" role="img" aria-label="Procurement &amp; Purchasing">Procurement &amp; Purchasing</div>
+            <div class="blog-card-body">
+              <span class="eyebrow" style="margin-bottom:6px;">Procurement</span>
+              <h3>What reactive purchasing actually costs per quarter.</h3>
+              <p>Expedited freight, missed volume discounts, and unmanaged price creep — the total was larger than expected.</p>
+              <div class="blog-meta">
+                <span class="date">March 2026</span>
+                <span class="author">Clarity AI</span>
+              </div>
+              <a href="contact.html" class="accent-link mt-16">Coming Soon →</a>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="text-center mt-48">
+          <a href="blog.html" class="btn-secondary">View All Posts →</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="wordmark" style="text-decoration:none; display:inline-flex; flex-direction:column; margin-bottom:12px;">
+          <span class="wordmark-text"><span class="clarity">clarity</span><span class="ai-glyph">AI</span></span>
+        </a>
+        <p class="tagline">Problem First. Technology Second.</p>
+        <p class="location">Orlando, Florida</p>
+        <p>Clarity AI builds AI agents and assessment services for operations teams who need results, not experiments.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul class="footer-links">
+          <li><a href="solutions.html">AI Agents</a></li>
+          <li><a href="edi-intelligence.html">EDI Intelligence</a></li>
+          <li><a href="tools.html">ERP Tools</a></li>
+        </ul>
+        <h4 style="margin-top:28px;">Company</h4>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="insights.html">Insights</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <h4 style="margin-top:28px;">Resources</h4>
+        <ul class="footer-links">
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="contact.html">Book a Call</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact">
+          <a href="mailto:info@clarityaicg.com">info@clarityaicg.com</a>
+          <a href="tel:+14079709282">(407) 970-9282</a>
+          <a href="https://linkedin.com/company/clarityaicg" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        </div>
+        <p class="newsletter-label" style="margin-top:24px;">New posts. Once a month. No fluff.</p>
+        <form class="newsletter-form" onsubmit="return false;" aria-label="Newsletter signup">
+          <label for="nl-email-post" style="position:absolute;width:1px;height:1px;overflow:hidden;">Email</label>
+          <input type="email" id="nl-email-post" placeholder="Your email address" autocomplete="email" />
+          <button type="submit" class="btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      clarityAI &nbsp;|&nbsp; © 2026 Clarity AI Consulting Group &nbsp;|&nbsp; clarityaicg.com &nbsp;|&nbsp; Confidential information — do not reproduce without written permission.
+    </div>
+  </footer>
+
+  <script>
+    function toggleNav(btn) {
+      const nav = document.getElementById('mobile-nav');
+      const open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+    }
+    const fadeEls = document.querySelectorAll('.fade-up');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+      }, { threshold: 0.1 });
+      fadeEls.forEach(el => observer.observe(el));
+    } else { fadeEls.forEach(el => el.classList.add('visible')); }
+  </script>
+</body>
+</html>
