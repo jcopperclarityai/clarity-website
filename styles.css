@@ -1054,6 +1054,11 @@ p { color: var(--white); line-height: 1.55; }
   padding: 32px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.5);
   transition: transform 220ms, border-color 220ms, box-shadow 220ms;
+  display: flex;
+  flex-direction: column;
+}
+.biz-card .accent-link {
+  margin-top: auto;
 }
 .biz-card:hover {
   transform: translateY(-3px);
